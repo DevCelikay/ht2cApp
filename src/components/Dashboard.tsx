@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Clock, ArrowLeft, Sparkles } from 'lucide-react';
+import { Clock, ArrowLeft } from 'lucide-react';
 import { WorkflowCard } from './WorkflowCard';
 import { CategoryCard } from './CategoryCard';
 import { WorkflowPanel } from './WorkflowPanel';
@@ -60,7 +60,7 @@ export const Dashboard: React.FC = () => {
 
       {showCategories ? (
         /* Category Grid */
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {workflowCategories.map(category => (
             <CategoryCard
               key={category.id}
@@ -71,7 +71,7 @@ export const Dashboard: React.FC = () => {
         </div>
       ) : (
         /* Workflow Grid */
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {selectedCategory?.workflows.map(workflow => (
             <WorkflowCard
               key={workflow.id}
@@ -84,14 +84,14 @@ export const Dashboard: React.FC = () => {
 
       {/* Recent Activity Section */}
       <div className="mt-12">
-        <h3 className="text-xl font-bold text-gray-900 mb-6">Recent Activity</h3>
-        <div className="bg-white rounded-xl border border-gray-200 p-8 shadow-sm">
-          <div className="text-center py-12">
-            <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-              <Clock className="w-10 h-10 text-gray-400" />
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Recent Activity</h3>
+        <div className="bg-white rounded-xl border border-gray-200 p-6">
+          <div className="text-center py-8">
+            <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Clock className="w-6 h-6 text-gray-400" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-700 mb-2">No recent workflow activity</h4>
-            <p className="text-base text-gray-500 mt-2">
+            <p className="text-gray-500">No recent workflow activity</p>
+            <p className="text-sm text-gray-400 mt-1">
               Your workflow executions will appear here
             </p>
           </div>

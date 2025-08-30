@@ -4,7 +4,7 @@ const leadGenerationWorkflows: WorkflowCard[] = [
   {
     id: 'apollo-scraping',
     name: 'Apollo Scraping',
-    description: 'Automatically extract high-quality contact data from Apollo.io search results to build targeted prospect lists',
+    description: 'Extract contacts from Apollo searches',
     icon: 'Search',
     status: 'ready',
     endpoint: '/startApolloScrape',
@@ -12,7 +12,6 @@ const leadGenerationWorkflows: WorkflowCard[] = [
       {
         id: 'apolloUrl',
         label: 'Apollo URL',
-        description: 'Paste the full Apollo.io search results URL from your browser. Make sure you\'re logged into Apollo and the search contains the prospects you want to extract.',
         type: 'url',
         required: true,
         placeholder: 'https://app.apollo.io/...'
@@ -20,7 +19,6 @@ const leadGenerationWorkflows: WorkflowCard[] = [
       {
         id: 'scrapeName',
         label: 'Scrape Name',
-        description: 'Give this scraping session a memorable name so you can easily identify it later in your workflow history.',
         type: 'text',
         required: true,
         placeholder: 'My Apollo Scrape'
@@ -28,7 +26,6 @@ const leadGenerationWorkflows: WorkflowCard[] = [
       {
         id: 'straightToEnrich',
         label: 'Straight to Enrich',
-        description: 'Enable this to automatically enrich the scraped contacts with additional data points like phone numbers and social profiles.',
         type: 'toggle'
       }
     ]
@@ -36,7 +33,7 @@ const leadGenerationWorkflows: WorkflowCard[] = [
   {
     id: 'google-maps',
     name: 'Google Maps Scraping',
-    description: 'Extract comprehensive business information from Google Maps including contact details, reviews, and location data',
+    description: 'Gather business data from Google Maps',
     icon: 'MapPin',
     status: 'ready',
     endpoint: '/startGoogleOutscraper',
@@ -44,7 +41,6 @@ const leadGenerationWorkflows: WorkflowCard[] = [
       {
         id: 'searchTerms',
         label: 'Search Terms',
-        description: 'Enter the types of businesses you want to find. Use specific terms like "dental clinics", "physical therapy", or "medical centers" for better results.',
         type: 'text',
         required: true,
         placeholder: 'healthcare clinics, medical centers'
@@ -52,7 +48,6 @@ const leadGenerationWorkflows: WorkflowCard[] = [
       {
         id: 'locations',
         label: 'Locations',
-        description: 'Specify the cities, states, or regions where you want to search. Separate multiple locations with commas for broader coverage.',
         type: 'text',
         required: true,
         placeholder: 'New York, Los Angeles, Chicago'
@@ -60,7 +55,6 @@ const leadGenerationWorkflows: WorkflowCard[] = [
       {
         id: 'resultsPerSearch',
         label: 'Results per Search',
-        description: 'Set the maximum number of businesses to extract per search term and location combination. Higher numbers take longer but provide more comprehensive data.',
         type: 'number',
         required: true,
         placeholder: '20'
@@ -68,7 +62,6 @@ const leadGenerationWorkflows: WorkflowCard[] = [
       {
         id: 'scrapeName',
         label: 'Scrape Name',
-        description: 'Create a descriptive name for this Google Maps scraping session to help you organize and track your data collection efforts.',
         type: 'text',
         required: true,
         placeholder: 'Google Maps Healthcare Scrape'
@@ -78,7 +71,7 @@ const leadGenerationWorkflows: WorkflowCard[] = [
   {
     id: 'email-validation',
     name: 'Email Validation',
-    description: 'Clean and verify your email lists using advanced validation to improve deliverability and reduce bounce rates',
+    description: 'Validate emails with LeadMagic & BounceBan',
     icon: 'CheckCircle',
     status: 'ready',
     endpoint: '/leadmagic',
@@ -86,7 +79,6 @@ const leadGenerationWorkflows: WorkflowCard[] = [
       {
         id: 'spreadsheetId',
         label: 'Spreadsheet ID',
-        description: 'Enter the Google Sheets ID containing your email list. The sheet should have an "email" column with the addresses you want to validate.',
         type: 'text',
         required: true,
         placeholder: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms'
@@ -96,7 +88,7 @@ const leadGenerationWorkflows: WorkflowCard[] = [
   {
     id: 'campaign-deploy',
     name: 'Campaign Deploy',
-    description: 'Automatically deploy your validated prospect lists to SmartLead for personalized email campaign execution',
+    description: 'Launch validated leads to SmartLead',
     icon: 'Send',
     status: 'coming-soon'
   }

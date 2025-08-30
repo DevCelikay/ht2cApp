@@ -19,31 +19,28 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ category, onClick })
 
   return (
     <div 
-      className="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-xl hover:border-teal-300 hover:-translate-y-2 transition-all duration-400 cursor-pointer group relative overflow-hidden"
+      className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:border-teal-200 transition-all duration-300 cursor-pointer group"
       onClick={onClick}
     >
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-      
       <div className="flex items-center justify-between">
         <div className="flex items-start space-x-4">
-          <div className="w-16 h-16 bg-gradient-to-br from-teal-100 to-teal-200 rounded-2xl flex items-center justify-center group-hover:from-teal-200 group-hover:to-teal-300 group-hover:scale-110 transition-all duration-400 shadow-lg relative z-10">
+          <div className="w-12 h-12 bg-teal-50 rounded-lg flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-200">
             {IconComponent && (
-              <IconComponent className="w-8 h-8 text-teal-700 group-hover:scale-110 transition-transform duration-300" />
+              <IconComponent className="w-6 h-6 text-teal-600" />
             )}
           </div>
           
-          <div className="flex-1 relative z-10">
-            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors duration-300">
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-200">
               {category.name}
             </h3>
-            <p className="text-gray-600 text-base leading-relaxed mb-4">
+            <p className="text-gray-600 text-sm leading-relaxed mb-3">
               {category.description}
             </p>
-            <div className="flex items-center space-x-4 text-sm text-gray-500">
-              <span className="font-medium">{workflowCount} workflow{workflowCount !== 1 ? 's' : ''}</span>
+            <div className="flex items-center space-x-4 text-xs text-gray-500">
+              <span>{workflowCount} workflow{workflowCount !== 1 ? 's' : ''}</span>
               {workflowCount > 0 && (
-                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full font-medium shadow-sm">
+                <span className="px-2 py-1 bg-green-50 text-green-600 rounded-full">
                   Available
                 </span>
               )}
@@ -51,7 +48,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ category, onClick })
           </div>
         </div>
         
-        <ChevronRight className="w-6 h-6 text-gray-400 group-hover:text-teal-600 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300 relative z-10" />
+        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-200" />
       </div>
     </div>
   );

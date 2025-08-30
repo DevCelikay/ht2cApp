@@ -34,9 +34,6 @@ export default {
           '100%': { opacity: '1' },
         },
       },
-      backdropBlur: {
-        xs: '2px',
-      },
     },
   },
   plugins: [],

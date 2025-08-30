@@ -11,7 +11,6 @@ export interface WorkflowCard {
 export interface WorkflowField {
   id: string;
   label: string;
-  description: string;
   type: 'text' | 'url' | 'number' | 'toggle' | 'select';
   required?: boolean;
   placeholder?: string;
